@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Postit App</title>
+</head>
+<body>
+    <h1>Gotta go fast from HTML. lolz</h1>
+
+    <div id="app">
+      <div v-for="post in posts">
+          <h2>{{ post.title }}</h2>
+
+          <p>{{ post.body }}</p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>
