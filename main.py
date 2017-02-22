@@ -16,7 +16,7 @@ async def index(request):
     template = open(os.getcwd() + '/templates/index.html')
     return html(template.read())
 
-@app.route("/posts", methods=['GET'])
+@app.route("api/posts", methods=['GET'])
 async def posts(resquest):
     posts = db.posts.find()
     p = []
@@ -24,6 +24,15 @@ async def posts(resquest):
         p.append({'title': post['title'], 'body': post['body']})
 
     return json(p)
+
+# example of a post request
+@app.route('api/post/create', methods=['POST'])
+async def create_post(request):
+    post = request.json
+    db.posts.insert({'title': post['title'], 'body': post['body']})
+
+    return json(post)
+
     
 
 app.run(host="0.0.0.0", port=5000, debug=True)

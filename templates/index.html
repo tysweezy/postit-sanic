@@ -13,6 +13,10 @@
 
           <p>{{ post.body }}</p>
       </div>
+
+      <form v-on:submit="newPost()">
+          New post
+      </form>
     </div>
 
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
